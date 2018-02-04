@@ -51,7 +51,7 @@
 						<configuration>
 							<transformers>
 								<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-									<mainClass>tn.bettaieb.app.client.gui.MainGUI</mainClass>
+									<mainClass>tn.bettaieb.dream_land.app.client.gui.MainGUI</mainClass>
 								</transformer>
 							</transformers>
 						</configuration>
