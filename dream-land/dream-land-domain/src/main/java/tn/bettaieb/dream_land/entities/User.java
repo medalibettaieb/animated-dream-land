@@ -1,12 +1,14 @@
 package tn.bettaieb.dream_land.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -19,7 +21,7 @@ public class User implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "USR_CODE")
-	private Long code;
+	private Integer code;
 	@Column(name = "USR_NAME")
 	private String name;
 	@Column(name = "USR_LOGIN")
@@ -28,12 +30,15 @@ public class User implements Serializable {
 	private String password;
 	@Column(name = "USR_EMAIL")
 	private String email;
+	
+	@OneToMany(mappedBy="user")
+	private List<ShiftDetail> shiftDetails;
 
-	public Long getCode() {
+	public Integer getCode() {
 		return code;
 	}
 
-	public void setCode(Long code) {
+	public void setCode(Integer code) {
 		this.code = code;
 	}
 
@@ -79,6 +84,14 @@ public class User implements Serializable {
 		this.login = login;
 		this.password = password;
 		this.email = email;
+	}
+
+	public List<ShiftDetail> getShiftDetails() {
+		return shiftDetails;
+	}
+
+	public void setShiftDetails(List<ShiftDetail> shiftDetails) {
+		this.shiftDetails = shiftDetails;
 	}
 
 }
