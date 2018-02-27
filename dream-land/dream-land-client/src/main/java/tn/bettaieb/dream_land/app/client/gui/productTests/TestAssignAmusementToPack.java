@@ -4,6 +4,8 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+import tn.bettaieb.dream_land.entities.Amusement;
+import tn.bettaieb.dream_land.entities.Pack;
 import tn.bettaieb.dream_land.services.AmusementServiceRemote;
 import tn.bettaieb.dream_land.services.AssignementServiceRemote;
 import tn.bettaieb.dream_land.services.EquipementServiceRemote;
@@ -12,7 +14,7 @@ import tn.bettaieb.dream_land.services.ReportingServiceRemote;
 import tn.bettaieb.dream_land.services.TicketingServiceRemote;
 import tn.bettaieb.dream_land.services.UserServiceRemote;
 
-public class Snipets {
+public class TestAssignAmusementToPack {
 
 	public static void main(String[] args) throws NamingException {
 		Context context = new InitialContext();
@@ -31,7 +33,9 @@ public class Snipets {
 		ReportingServiceRemote reportingServiceRemote = (ReportingServiceRemote) context.lookup(
 				"dream-land-ear/dream-land-service/ReportingService!tn.bettaieb.dream_land.services.ReportingServiceRemote");
 	
-	
+	Amusement amusement=amusementServiceRemote.find(1);
+	Pack pack=packServiceRemote.find(1);
+	assignementServiceRemote.assignAmusementToPack(amusement, pack);
 	}
 
 }

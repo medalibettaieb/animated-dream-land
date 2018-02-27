@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -30,9 +31,19 @@ public class User implements Serializable {
 	private String password;
 	@Column(name = "USR_EMAIL")
 	private String email;
-	
-	@OneToMany(mappedBy="user")
+
+	@OneToMany(mappedBy = "user")
 	private List<ShiftDetail> shiftDetails;
+
+	@ManyToMany(mappedBy = "costomers")
+	private List<Pack> packs;
+
+	public User(String name, String login, String password) {
+		super();
+		this.name = name;
+		this.login = login;
+		this.password = password;
+	}
 
 	public Integer getCode() {
 		return code;
@@ -92,6 +103,14 @@ public class User implements Serializable {
 
 	public void setShiftDetails(List<ShiftDetail> shiftDetails) {
 		this.shiftDetails = shiftDetails;
+	}
+
+	public List<Pack> getPacks() {
+		return packs;
+	}
+
+	public void setPacks(List<Pack> packs) {
+		this.packs = packs;
 	}
 
 }

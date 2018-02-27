@@ -3,8 +3,12 @@ package tn.bettaieb.dream_land.entities;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 /**
@@ -16,18 +20,27 @@ import javax.persistence.OneToMany;
 public class Amusement implements Serializable {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String name;
+	
+	@ManyToMany(mappedBy="amusements")
+	private List<Pack> packs;
+
+	@OneToMany(mappedBy = "amusement", cascade = CascadeType.MERGE)
+	private List<Equipement> equipements;
 
 	@OneToMany(mappedBy = "amusement")
-	private List<Equipement> equipements;
-	
-	@OneToMany(mappedBy="amusement")
 	private List<ShiftDetail> shiftDetails;
 	private static final long serialVersionUID = 1L;
 
 	public Amusement() {
 		super();
+	}
+
+	public Amusement(String name) {
+		super();
+		this.name = name;
 	}
 
 	public Integer getId() {
@@ -62,4 +75,18 @@ public class Amusement implements Serializable {
 		this.shiftDetails = shiftDetails;
 	}
 
+	public void linkEquipementsToThisAmusement(List<Equipement> equipements) {
+		this.equipements = equipements;
+		for (Equipement e : equipements) {
+			e.setAmusement(this);
+		}
+	}
+
+	public List<Pack> getPacks() {
+		return packs;
+	}
+
+	public void setPacks(List<Pack> packs) {
+		this.packs = packs;
+	}
 }
