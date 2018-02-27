@@ -19,7 +19,13 @@ public class Employee extends User implements Serializable {
 
 	public Employee() {
 		super();
-	}   
+	}
+	
+	public Employee(String name, String login, String password, Float salary) {
+		super(name, login, password);
+		this.salary = salary;
+	}
+
 	public Float getSalary() {
 		return this.salary;
 	}

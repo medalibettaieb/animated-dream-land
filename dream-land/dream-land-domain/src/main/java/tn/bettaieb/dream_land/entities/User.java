@@ -34,6 +34,14 @@ public class User implements Serializable {
 	@OneToMany(mappedBy="user")
 	private List<ShiftDetail> shiftDetails;
 
+	
+	public User(String name, String login, String password) {
+		super();
+		this.name = name;
+		this.login = login;
+		this.password = password;
+	}
+
 	public Integer getCode() {
 		return code;
 	}
