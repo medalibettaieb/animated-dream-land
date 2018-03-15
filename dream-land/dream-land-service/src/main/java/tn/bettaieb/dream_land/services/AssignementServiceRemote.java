@@ -17,4 +17,5 @@ public interface AssignementServiceRemote {
 	void scheduleShift(ShiftType shiftType, User user, Amusement amusement, Date shiftDate);
 
 	void assignAmusementToPack(Amusement amusement, Pack pack);
+
 }

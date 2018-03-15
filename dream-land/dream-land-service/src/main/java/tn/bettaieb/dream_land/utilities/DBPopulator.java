@@ -11,11 +11,13 @@ import tn.bettaieb.dream_land.entities.Customer;
 import tn.bettaieb.dream_land.entities.Employee;
 import tn.bettaieb.dream_land.entities.Equipement;
 import tn.bettaieb.dream_land.entities.Pack;
+//github.com/medalibettaieb/animated-dream-land.git
 import tn.bettaieb.dream_land.entities.User;
 import tn.bettaieb.dream_land.entities.UserGender;
 import tn.bettaieb.dream_land.services.AmusementServiceLocal;
 import tn.bettaieb.dream_land.services.EquipementServiceLocal;
 import tn.bettaieb.dream_land.services.PackServiceLocal;
+//github.com/medalibettaieb/animated-dream-land.git
 import tn.bettaieb.dream_land.services.UserServiceLocal;
 
 @Singleton

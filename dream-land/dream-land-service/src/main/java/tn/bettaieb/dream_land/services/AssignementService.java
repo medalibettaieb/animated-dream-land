@@ -53,19 +53,16 @@ public class AssignementService implements AssignementServiceRemote, Assignement
 
 	@Override
 	public void scheduleShift(ShiftType shiftType, User user, Amusement amusement, Date shiftDate) {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void assignAmusementToPack(Amusement amusement, Pack pack) {
-		List<Amusement> oldList = reportingServiceLocal.findAmusementByPack(pack);
-		if (!oldList.contains(amusement)) {
-			oldList.add(amusement);
+		List<Amusement> amusements = reportingServiceLocal.findAmusementByPack(pack);
+		if (!amusements.contains(amusement)) {
+			amusements.add(amusement);
 		}
-
-		pack.setAmusements(oldList);
-
+		pack.setAmusements(amusements);
 		packServiceLocal.update(pack);
 
 	}

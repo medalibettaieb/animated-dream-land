@@ -23,8 +23,8 @@ public class Amusement implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String name;
-	
-	@ManyToMany(mappedBy="amusements")
+
+	@ManyToMany(mappedBy = "amusements")
 	private List<Pack> packs;
 
 	@OneToMany(mappedBy = "amusement", cascade = CascadeType.MERGE)
@@ -89,4 +89,5 @@ public class Amusement implements Serializable {
 	public void setPacks(List<Pack> packs) {
 		this.packs = packs;
 	}
+
 }
