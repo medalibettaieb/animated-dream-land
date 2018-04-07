@@ -1,0 +1,52 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/template.xhtml" xmlns:p="http://primefaces.org/ui">
+	<ui:define name="pageTitle"> list Equipements</ui:define>
+	<ui:define name="pageContent">
+		<p:calendar/>
+		<h:form>
+			<h:dataTable value="#{equipementBean.equipements}" var="e" border="2"
+				rendered="#{not equipementBean.showForm}">
+				<h:column id="c1">
+					<f:facet name="header">
+						<h:outputText value="id" />
+					</f:facet>
+					<h:outputText value="#{e.id}" />
+				</h:column>
+				<h:column id="c2">
+					<f:facet name="header">
+						<h:outputText value="name" />
+					</f:facet>
+					<h:outputText value="#{e.name}" />
+				</h:column>
+				<h:column id="c3">
+					<f:facet name="header">
+						<h:outputText value="#" />
+					</f:facet>
+					<h:commandButton action="#{equipementBean.doSelect()}"
+						value="select">
+						<f:setPropertyActionListener value="#{e}"
+							target="#{equipementBean.equipement}"></f:setPropertyActionListener>
+					</h:commandButton>
+				</h:column>
+			</h:dataTable>
+
+			<h:panelGrid columns="2" border="2"
+				rendered="#{equipementBean.showForm}">
+				<h:outputText value="NAME :" />
+				<h:inputText value="#{equipementBean.equipement.name}" />
+				<h:commandButton action="#{equipementBean.doAddEquipement()}"
+					value="save/update" />
+				<h:commandButton action="#{equipementBean.doDeleteEquipement()}"
+					value="delete" />
+				<h:commandButton action="#{equipementBean.doCancel}" value="cancel" />
+			</h:panelGrid>
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>
+
+
