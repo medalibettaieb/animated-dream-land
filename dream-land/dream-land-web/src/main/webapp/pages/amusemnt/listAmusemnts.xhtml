@@ -1,0 +1,65 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/template.xhtml" xmlns:p="http://primefaces.org/ui">
+	<ui:define name="pageTitle"> list Amusemnt</ui:define>
+	<ui:define name="pageContent">
+		<h:form>
+			<h:dataTable value="#{amusementBean.amusements}" var="e" border="2"
+				rendered="#{not amusementBean.showForm}">
+				<h:column id="c1">
+					<f:facet name="header">
+						<h:outputText value="id" />
+					</f:facet>
+					<h:outputText value="#{e.id}" />
+				</h:column>
+				<h:column id="c2">
+					<f:facet name="header">
+						<h:outputText value="name" />
+					</f:facet>
+					<h:outputText value="#{e.name}" />
+				</h:column>
+				<h:column id="c23">
+					<f:facet name="header">
+						<h:outputText value="equipements nb" />
+					</f:facet>
+					<h:outputText value="#{e.equipements.size()}" />
+				</h:column>
+				<h:column id="c4">
+					<f:facet name="header">
+						<h:outputText value="#" />
+					</f:facet>
+					<h:commandButton action="#{amusementBean.doSelect()}"
+						value="select">
+						<f:setPropertyActionListener value="#{e}"
+							target="#{amusementBean.amusement}"></f:setPropertyActionListener>
+					</h:commandButton>
+				</h:column>
+			</h:dataTable>
+			<p:commandButton action="#{amusementBean.doSelect()}" value="NEW"
+				rendered="#{not amusementBean.showForm}" />
+
+			<h:panelGrid columns="2" border="2"
+				rendered="#{amusementBean.showForm}">
+				<h:outputText value="NAME :" />
+				<h:inputText value="#{amusementBean.amusement.name}" />
+				<h:outputText value="Equipments :" />
+				<h:selectOneMenu value="#{amusementBean.idOfEquipement}">
+					<f:selectItem itemLabel="please select" />
+					<f:selectItems value="#{equipementBean.equipements}" var="e"
+						itemLabel="#{e.name}" itemValue="#{e.id}" />
+				</h:selectOneMenu>
+				<h:commandButton action="#{amusementBean.doAddAmusemnt()}"
+					value="save/update" />
+				<h:commandButton action="#{amusementBean.doDeleteAmusemnt()}"
+					value="delete" />
+				<h:commandButton action="#{amusementBean.doCancel()}" value="cancel" />
+			</h:panelGrid>
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>
+
+
