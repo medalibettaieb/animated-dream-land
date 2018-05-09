@@ -12,11 +12,21 @@ import tn.bettaieb.dream_land.utilities.GenericDAO;
  */
 @Stateless
 public class AmusementService extends GenericDAO<Amusement> implements AmusementServiceRemote, AmusementServiceLocal {
-    /**
-     * Default constructor. 
-     */
-    public AmusementService() {
-        super(Amusement.class);
-    }
+	@PersistenceContext
+	private EntityManager entityManager;
+
+	/**
+	 * Default constructor.
+	 */
+	public AmusementService() {
+		super(Amusement.class);
+	}
+
+	@Override
+	public void addImage(String shortImagePath, Amusement amusement) {
+		amusement.setImage(shortImagePath);
+		entityManager.merge(amusement);
+
+	}
 
 }

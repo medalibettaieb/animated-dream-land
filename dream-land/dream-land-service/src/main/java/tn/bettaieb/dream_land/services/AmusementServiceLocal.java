@@ -8,4 +8,6 @@ import tn.bettaieb.dream_land.utilities.IGenericDAO;
 @Local
 public interface AmusementServiceLocal extends IGenericDAO<Amusement> {
 
+	void addImage(String shortImagePath, Amusement amusement);
+
 }

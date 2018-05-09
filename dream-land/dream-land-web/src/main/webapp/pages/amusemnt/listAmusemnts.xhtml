@@ -5,7 +5,7 @@
 	template="/template/template.xhtml" xmlns:p="http://primefaces.org/ui">
 	<ui:define name="pageTitle"> list Amusemnt</ui:define>
 	<ui:define name="pageContent">
-		<h:form>
+		<h:form enctype="multipart/form-data">
 			<h:dataTable value="#{amusementBean.amusements}" var="e" border="2"
 				rendered="#{not amusementBean.showForm}">
 				<h:column id="c1">
@@ -50,11 +50,19 @@
 					<f:selectItems value="#{equipementBean.equipements}" var="e"
 						itemLabel="#{e.name}" itemValue="#{e.id}" />
 				</h:selectOneMenu>
-				<h:commandButton action="#{amusementBean.doAddAmusemnt()}"
-					value="save/update" />
-				<h:commandButton action="#{amusementBean.doDeleteAmusemnt()}"
-					value="delete" />
-				<h:commandButton action="#{amusementBean.doCancel()}" value="cancel" />
+
+				<p:fileUpload fileUploadListener="#{imageUploader.handleFileUpload}"
+					label="Ajouter" uploadLabel="Upload" cancelLabel="Annuler"
+					mode="advanced" auto="false" sizeLimit="10485760" multiple="true"
+					fileLimit="10" fileLimitMessage="Maximum 10 images"
+					dragDropSupport="true" allowTypes="/(\.|\/)(gif|jpe?g|png)$/"
+					update="@(form)" />
+
+			<h:commandButton action="#{amusementBean.doAddAmusemnt()}"
+				value="save/update" />
+			<h:commandButton action="#{amusementBean.doDeleteAmusemnt()}"
+				value="delete" />
+			<h:commandButton action="#{amusementBean.doCancel()}" value="cancel" />
 			</h:panelGrid>
 		</h:form>
 

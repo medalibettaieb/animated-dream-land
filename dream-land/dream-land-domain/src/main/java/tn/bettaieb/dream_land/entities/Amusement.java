@@ -2,6 +2,7 @@ package tn.bettaieb.dream_land.entities;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.UUID;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -11,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.PostPersist;
 
 /**
  * Entity implementation class for Entity: Amusement
@@ -24,11 +26,13 @@ public class Amusement implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String name;
+	private String uuid;
+	private String image;
 
 	@ManyToMany(mappedBy = "amusements")
 	private List<Pack> packs;
 
-	@OneToMany(mappedBy = "amusement", cascade = CascadeType.MERGE,fetch=FetchType.EAGER)
+	@OneToMany(mappedBy = "amusement", cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
 	private List<Equipement> equipements;
 
 	@OneToMany(mappedBy = "amusement")
@@ -91,4 +95,24 @@ public class Amusement implements Serializable {
 		this.packs = packs;
 	}
 
+	public String getUuid() {
+		return uuid;
+	}
+
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	@PostPersist
+	private void init() {
+		this.uuid = UUID.randomUUID().toString();
+	}
 }

@@ -1,0 +1,130 @@
+[33mcommit ae5a43d1f9e28738cde2d5b9cad55ad331516beb[m
+Author: bettaieb <bettaieb@bettaieb-OMEN-by-HP-Laptop>
+Date:   Thu Apr 19 17:20:40 2018 +0100
+
+    amusement bean
+    
+    Signed-off-by: bettaieb <bettaieb@bettaieb-OMEN-by-HP-Laptop>
+
+[33mcommit c462848180e72371be1ab2e718714fa8f8aa60df[m
+Author: bettaieb <bettaieb@bettaieb-OMEN-by-HP-Laptop>
+Date:   Sat Apr 7 15:38:35 2018 +0100
+
+    jsf
+    
+    Signed-off-by: bettaieb <bettaieb@bettaieb-OMEN-by-HP-Laptop>
+
+[33mcommit ef80733c96d78187f449a77aae9b77ae00370b0e[m
+Author: bettaieb <bettaieb@DESKTOP-KM2D64Q>
+Date:   Sat Mar 17 23:24:07 2018 +0000
+
+    tt
+    
+    Signed-off-by: bettaieb <bettaieb@DESKTOP-KM2D64Q>
+
+[33mcommit 323084fb1a5687911ae468c6ca6c0e684d132c34[m
+Merge: 170fa6e c3f5a48
+Author: bettaieb <bettaieb@DESKTOP-KM2D64Q>
+Date:   Thu Mar 15 16:58:40 2018 +0000
+
+    Merge branch 'master' of
+    https://github.com/medalibettaieb/animated-dream-land.git
+    
+    Conflicts:
+    	dream-land/dream-land-client/src/main/java/tn/bettaieb/dream_land/app/client/gui/productTests/Snipets.java
+    	dream-land/dream-land-domain/src/main/java/tn/bettaieb/dream_land/entities/Amusement.java
+    	dream-land/dream-land-domain/src/main/java/tn/bettaieb/dream_land/entities/User.java
+    	dream-land/dream-land-service/src/main/java/tn/bettaieb/dream_land/services/AssignementService.java
+    	dream-land/dream-land-service/src/main/java/tn/bettaieb/dream_land/services/AssignementServiceRemote.java
+    	dream-land/dream-land-service/src/main/java/tn/bettaieb/dream_land/utilities/DBPopulator.java
+
+[33mcommit 170fa6e4f8d98c4d3dbb0c37a562127fe18a9dfb[m
+Author: bettaieb med ali <medali.bettaieb@esprit.tn>
+Date:   Tue Feb 27 14:15:07 2018 +0100
+
+    snipets
+    
+    Signed-off-by: bettaieb <bettaieb@DESKTOP-KM2D64Q>
+
+[33mcommit c3f5a4842d725065485f53c6dc96697bee044e44[m
+Author: bettaieb med ali <medali.bettaieb@esprit.tn>
+Date:   Tue Feb 27 14:15:07 2018 +0100
+
+    assignment service
+    
+    Signed-off-by: bettaieb med ali <medali.bettaieb@esprit.tn>
+
+[33mcommit 89128fb8ba00aea9518a4b3bee4ae0dba7097a96[m
+Author: bettaieb med ali <medali.bettaieb@esprit.tn>
+Date:   Mon Feb 26 15:10:37 2018 +0100
+
+    crud training
+    
+    Signed-off-by: bettaieb med ali <medali.bettaieb@esprit.tn>
+
+[33mcommit 9edd8fd4847f8c047c1390079c6dc8c396ec4aee[m
+Author: bettaieb med ali <medali.bettaieb@esprit.tn>
+Date:   Mon Feb 19 20:44:33 2018 +0100
+
+    hr module
+    
+    Signed-off-by: bettaieb med ali <medali.bettaieb@esprit.tn>
+
+[33mcommit 9699d2214e9a2ac36ca9d268bbe342d12fa33b3e[m
+Author: bettaieb med ali <medali.bettaieb@esprit.tn>
+Date:   Mon Feb 19 15:25:09 2018 +0100
+
+    training relationship
+
+[33mcommit a4ae523c0ba8a90e8835bbaca095406ef2ae8a58[m
+Author: bettaieb med ali <medali.bettaieb@esprit.tn>
+Date:   Mon Feb 5 04:55:42 2018 +0100
+
+    Signed-off-by: bettaieb med ali <medali.bettaieb@esprit.tn>
+
+[33mcommit fc8da1843918a32c7d92ad4d7e103c0a9002ee6c[m
+Author: bettaieb med ali <medali.bettaieb@esprit.tn>
+Date:   Sun Feb 4 10:06:25 2018 +0100
+
+    caddy demo
+    
+    Signed-off-by: bettaieb med ali <medali.bettaieb@esprit.tn>
+
+[33mcommit 0b0ab77e0845894df2724ef5b9518bf05cedfb1c[m
+Author: bettaieb med ali <medali.bettaieb@esprit.tn>
+Date:   Mon Jan 29 17:04:58 2018 +0100
+
+    calculation/add & greetings
+    
+    TODO: - / *
+    Signed-off-by: bettaieb med ali <medali.bettaieb@esprit.tn>
+
+[33mcommit 2531d6fe55f3a26fb7d68422677261e06e6061bc[m
+Author: bettaieb med ali <medali.bettaieb@esprit.tn>
+Date:   Tue Jan 23 11:36:18 2018 +0100
+
+    delete the class :A
+    
+    Signed-off-by: bettaieb med ali <medali.bettaieb@esprit.tn>
+
+[33mcommit eb6805f81290e05b97ef54c3e065bb48bb606ce4[m
+Author: bettaieb med ali <medali.bettaieb@esprit.tn>
+Date:   Tue Jan 23 11:33:25 2018 +0100
+
+    add the class : A
+    
+    Signed-off-by: bettaieb med ali <medali.bettaieb@esprit.tn>
+
+[33mcommit 2def074bca26494f0c4ce3fa3db2cf63793b00a1[m
+Author: bettaieb med ali <medali.bettaieb@esprit.tn>
+Date:   Tue Jan 23 11:19:11 2018 +0100
+
+    first commit
+    
+    Signed-off-by: bettaieb med ali <medali.bettaieb@esprit.tn>
+
+[33mcommit 08c21b6b60b3673bccc71f412f8ff8dde90a293e[m
+Author: bettaieb <medali.bettaieb@esprit.tn>
+Date:   Tue Jan 23 11:12:40 2018 +0100
+
+    Initial commit
